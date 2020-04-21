@@ -21,7 +21,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")//拦截所有请求
                 //放行的请求
-                .excludePathPatterns("/toLogin", "/login", "/asserts/**", "/static/**", "/webjars/**");
+                .excludePathPatterns("/toLogin", "/login");
     }
 
     /**
@@ -35,6 +35,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
         registry.addResourceHandler("/css/**").addResourceLocations("classpath:/css/");
         registry.addResourceHandler("/images/**").addResourceLocations("classpath:/images/");
+        registry.addResourceHandler("/images/**").addResourceLocations("classpath:/fonts/");
     }
 
     /**
@@ -45,6 +46,5 @@ public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/toLogin").setViewName("login");
-        registry.addViewController("/index").setViewName("index");
     }
 }

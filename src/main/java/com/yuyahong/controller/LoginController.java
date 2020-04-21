@@ -7,6 +7,7 @@ import com.yuyahong.utils.MyStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +29,7 @@ public class LoginController {
      * @param user
      * @return
      */
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login(User user, HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         System.out.println("user=" + user);
@@ -42,7 +43,7 @@ public class LoginController {
                 String inPassword = user.getPassword();
                 if (sqlPassword.equals(MyStringUtils.getPassword(inPassword))) {
                     session.setAttribute("user", one);
-                    return "redirect:index";
+                    return "redirect:/work/index";
                 } else {
                     System.out.println("密码不正确");
                     session.setAttribute("loginMsg", "密码不正确");
@@ -55,6 +56,13 @@ public class LoginController {
             model.addAttribute("loginMsg", "输入数据不能为空");
             session.setAttribute("loginMsg", "输入数据不能为空");
         }
+        return "login";
+    }
+
+    @RequestMapping("/loginOut")
+    public String loginOut(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.invalidate();
         return "login";
     }
 
