@@ -60,4 +60,5 @@ public class ArmyStudent extends BaseStudent implements Serializable {
     public void setArmyDuration(String armyDuration) {
         this.armyDuration = armyDuration;
     }
+
 }
