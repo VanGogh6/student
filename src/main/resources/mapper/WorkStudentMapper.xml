@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuyahong.mapper.WorkStudentMapper">
+  <resultMap id="BaseResultMap" type="com.yuyahong.entity.WorkStudent">
+    <!--@mbg.generated-->
+    <!--@Table work_student-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="no" jdbcType="VARCHAR" property="no" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
+    <result column="major_name" jdbcType="VARCHAR" property="majorName" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="work_company" jdbcType="VARCHAR" property="workCompany" />
+    <result column="work_address" jdbcType="VARCHAR" property="workAddress" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `no`, `name`, sex, college_name, major_name, class_name, phone, work_company, 
+    work_address, deleted, create_time, update_time
+  </sql>
+</mapper>

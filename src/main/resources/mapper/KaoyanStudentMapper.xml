@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuyahong.mapper.KaoyanStudentMapper">
+  <resultMap id="BaseResultMap" type="com.yuyahong.entity.KaoyanStudent">
+    <!--@mbg.generated-->
+    <!--@Table kaoyan_student-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="no" jdbcType="VARCHAR" property="no" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
+    <result column="major_name" jdbcType="VARCHAR" property="majorName" />
+    <result column="clazz_name" jdbcType="VARCHAR" property="clazzName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="kaoyan_school" jdbcType="VARCHAR" property="kaoyanSchool" />
+    <result column="school_address" jdbcType="VARCHAR" property="schoolAddress" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `no`, `name`, sex, college_name, major_name, clazz_name, phone, kaoyan_school, 
+    school_address, deleted, create_time, update_time
+  </sql>
+</mapper>
