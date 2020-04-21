@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 /**
  * 参军学生相关测试
- * @author wufan
+ * @author yuyahong
  * @date 2020/4/21 0021 17:58
  */
 public class ArmyStudentTest {
