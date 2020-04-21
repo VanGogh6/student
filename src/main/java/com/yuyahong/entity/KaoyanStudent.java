@@ -7,7 +7,8 @@ import java.io.Serializable;
 
 /**
  * 考研学生
- * @author wufan
+ *
+ * @author yuyahong
  * @date 2020/4/21 0021 17:50
  */  
 @TableName(value = "kaoyan_student")

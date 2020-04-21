@@ -4,11 +4,12 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /** 
- * @author wufan
+ * @author yuyahong
  * @date 2020/4/21 0021 17:48
  */  
 @TableName(value = "base_student")

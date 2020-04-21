@@ -5,7 +5,7 @@ import com.yuyahong.entity.WorkStudent;
 import org.apache.ibatis.annotations.Mapper;
 
 /** 
- * @author wufan
+ * @author yuyahong
  * @date 2020/4/21 0021 17:50
  */
 @Mapper

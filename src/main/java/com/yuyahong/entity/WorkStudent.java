@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 找到工作学生
- * @author wufan
+ * @author yuyahong
  * @date 2020/4/21 0021 17:50
  */  
 @TableName(value = "work_student")
