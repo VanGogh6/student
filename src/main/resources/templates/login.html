@@ -8,6 +8,22 @@
     <link href="/static/css/index.css" rel="stylesheet"/>
     <title>登录页</title>
 </head>
+<script src="/static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    function sub() {
+        let username = $('#username').val();
+        let password = $('#password').val();
+        if (username === null || username === "") {
+            alert("用户名不能为空！");
+            return;
+        }
+        if (password === null || password === "") {
+            alert("密码不能为空！");
+            return;
+        }
+        window.location.href = "/login?username=" + username + "&password=" + password;
+    }
+</script>
 <body>
 <div class="LoginBox">
     <div class="VerticalCenteredBox">
@@ -44,24 +60,5 @@
     </div>
 </div>
 </body>
-<script src="/static/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-    function sub() {
-        let username = $('#username').val();
-        let password = $('#password').val();
-        if (username === null || username === "") {
-            alert("用户名不能为空！");
-            return;
-        }
-        if (password === null || password === "") {
-            alert("密码不能为空！");
-            return;
-        }
-        window.location.href = "/login?username=" + username + "&password=" + password;
-    }
 
-    function f() {
-
-    }
-</script>
 </html>
