@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2020/4/22 0022 0:34
  */
 @Controller
-@RequestMapping("/kaoyan")
+@RequestMapping("/user/kaoyan")
 public class KaoYanStudentController {
     //  /kaoyan/index
     @RequestMapping("/index")

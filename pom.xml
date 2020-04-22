@@ -19,7 +19,8 @@
     </properties>
 
     <dependencies>
-        <!--spring-boot与thymeleaf模板引擎的依赖-->
+
+    <!--spring-boot与thymeleaf模板引擎的依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

@@ -43,7 +43,7 @@ public class LoginController {
                 String inPassword = user.getPassword();
                 if (sqlPassword.equals(MyStringUtils.getPassword(inPassword))) {
                     session.setAttribute("user", one);
-                    return "redirect:/work/index";
+                    return "redirect:/user/work/index";
                 } else {
                     System.out.println("密码不正确");
                     session.setAttribute("loginMsg", "密码不正确");

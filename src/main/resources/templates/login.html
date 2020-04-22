@@ -4,11 +4,11 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link href="/static/css/reset.css" rel="stylesheet"/>
-    <link href="/static/css/index.css" rel="stylesheet"/>
+    <link th:href="@{/static/css/reset.css}" href="/static/css/reset.css" rel="stylesheet"/>
+    <link th:href="@{/static/css/index.css}" href="/static/css/index.css" rel="stylesheet"/>
     <title>登录页</title>
 </head>
-<script src="/static/js/jquery-1.9.1.min.js"></script>
+<script th:src="@{/static/js/jquery-1.9.1.min.js}" src="/static/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
     function sub() {
         let username = $('#username').val();

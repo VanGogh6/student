@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2020/4/22 0022 0:11
  */
 @Controller
-@RequestMapping("/work")
+@RequestMapping("/user/work")
 public class WorkStudentController {
 
     @RequestMapping("/index")

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2020/4/22 0022 0:44
  */
 @Controller
-@RequestMapping("/other")
+@RequestMapping("/user/other")
 public class OtherStudentController {
     @RequestMapping("/index")
     public String index() {

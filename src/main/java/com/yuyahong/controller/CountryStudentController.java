@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author yuyahong
  * @date 2020/4/22 0022 0:42
  */
-@RequestMapping("/country")
+@RequestMapping("/user/country")
 @Controller
 public class CountryStudentController {
     @RequestMapping("/index")
