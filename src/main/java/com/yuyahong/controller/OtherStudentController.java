@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user/other")
 public class OtherStudentController {
-    @RequestMapping("/index")
-    public String index() {
+    @RequestMapping("/page")
+    public String page() {
         return "other-student";
     }
 }

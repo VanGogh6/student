@@ -43,7 +43,6 @@ public class MyMvcConfig implements WebMvcConfigurer {
          * 静态资源前加static
          */
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-
         //静态资源前不加静态资源前加static
 //        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
 //        registry.addResourceHandler("/fonts/**").addResourceLocations("classpath:/static/fonts/");

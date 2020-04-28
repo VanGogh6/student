@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user/kaoyan")
 public class KaoYanStudentController {
-    //  /kaoyan/index
-    @RequestMapping("/index")
-    public String index() {
+    @RequestMapping("/page")
+    public String page() {
 
         return "kaoyan-student";
     }

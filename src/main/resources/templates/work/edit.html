@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="/static/css/reset.css" rel="stylesheet"/>
+    <link href="/static/css/iconfont.css" rel="stylesheet"/>
+    <link href="/static/css/index.css" rel="stylesheet"/>
+    <script src="/static/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/js/f.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <title>就业学生</title>
+</head>
+<body>
+<div class="PublicHead clearfix">
+    <div class="leftBox clearfix">
+        <div class="companyText">
+            高校毕业学生去向管理系统
+        </div>
+    </div>
+    <div class="RightBox clearfix">
+        <div class="UserPhotoBox">
+            <div class="UserPic">
+                <img src="images/user.jpg"/>
+            </div>
+            <div th:text="${session.user.getRealName()}" class="UserName">
+                管理员
+            </div>
+        </div>
+        <a href="/loginOut">
+            <div class="dropOutBox">
+                <i class="iconfont icon-app_icons--">
+                </i>
+                <span>退出</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="PublicDownWhole clearfix">
+    <!--左侧-->
+    <div class="leftBox">
+        <ul>
+            <a href="/user/work/page">
+                <li class="Select"><i class="iconfont icon-yonghuguanli"></i><span>就业学生</span></li>
+            </a>
+            <a href="/user/kaoyan/index">
+                <li><i class="iconfont icon-weibiaoti1"></i><span>考研学生</span></li>
+            </a>
+
+            <a href="/user/army/index">
+                <li><i class="iconfont icon-tubiao_dingdan"></i><span>参军学生</span></li>
+            </a>
+            <a href="/user/country/index">
+                <li><i class="iconfont icon-fenlei"></i><span>考公务员学生</span></li>
+            </a>
+            <a href="/user/chuangye/index">
+                <li><i class="iconfont icon-weibiaoti1"></i><span>创业学生</span></li>
+            </a>
+            <a href="/user/other/index">
+                <li><i class="iconfont icon-weibiaoti1"></i><span>其他学生</span></li>
+            </a>
+        </ul>
+    </div>
+    <!--右侧-->
+    <div class="RightBox">
+        <div class="PublicContentBox">
+            <!--公用指向页面名字-->
+            <div class="PublicPointToAgeText">
+                <span class="span1">就业学生管理  </span> <span class="span2"></span>
+            </div>
+            <!--表修改-->
+            <div class="InquireTableBox">
+                <div class="headbox">
+                    <div class="headboxtext">
+                        <span class="span1">编辑的学生信息</span>
+                    </div>
+                    <hr>
+                </div>
+                <form action="/user/work/edit">
+                    <div class="ml-3">
+                        <input type="hidden" th:value="*{student.getId()}" name="id">
+                        <div class="form-group">
+                            <label>学号</label>
+                            <input type="text" th:value="*{student.no}" class="form-control" name="no">
+                        </div>
+                        <div class="form-group">
+                            <label>姓名</label>
+                            <input type="text" th:value="*{student.name}" class="form-control" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label>性别</label>
+                            <input type="text" th:value="*{student.sex}" class="form-control" name="sex">
+                        </div>
+                        <div class="form-group">
+                            <label>学院名称</label>
+                            <input type="text" th:value="*{student.collegeName}" class="form-control"
+                                   name="collegeName">
+                        </div>
+                        <div class="form-group">
+                            <label>专业名称</label>
+                            <input type="text" th:value="*{student.majorName}" class="form-control" name="majorName">
+                        </div>
+                        <div class="form-group">
+                            <label>班级名称</label>
+                            <input type="text" th:value="*{student.className}" class="form-control" name="className">
+                        </div>
+                        <div class="form-group">
+                            <label>个人电话</label>
+                            <input type="text" th:value="*{student.phone}" class="form-control" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>公司名称</label>
+                            <input type="text" th:value="*{student.workCompany}" class="form-control"
+                                   name="workCompany">
+                        </div>
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

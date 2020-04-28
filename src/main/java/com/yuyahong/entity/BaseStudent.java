@@ -62,11 +62,6 @@ public class BaseStudent implements Serializable {
     @TableField(value = "phone")
     private String phone;
 
-    /**
-     * 参军地址
-     */
-    @TableField(value = "army_address")
-    private String armyAddress;
 
     /**
      * 是否删除
@@ -232,23 +227,6 @@ public class BaseStudent implements Serializable {
         this.phone = phone;
     }
 
-    /**
-     * 获取参军地址
-     *
-     * @return army_address - 参军地址
-     */
-    public String getArmyAddress() {
-        return armyAddress;
-    }
-
-    /**
-     * 设置参军地址
-     *
-     * @param armyAddress 参军地址
-     */
-    public void setArmyAddress(String armyAddress) {
-        this.armyAddress = armyAddress;
-    }
 
     /**
      * 获取是否删除

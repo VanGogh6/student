@@ -12,8 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/user/army")
 public class ArmyStudentController {
 
-    @RequestMapping("/index")
-    public ModelAndView index(ModelAndView modelAndView) {
+    @RequestMapping("/page")
+    public ModelAndView page(ModelAndView modelAndView) {
         modelAndView.setViewName("army-student");
         return modelAndView;
     }

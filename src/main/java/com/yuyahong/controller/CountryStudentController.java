@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user/country")
 @Controller
 public class CountryStudentController {
-    @RequestMapping("/index")
-    public String index() {
+    @RequestMapping("/page")
+    public String page() {
         return "country-student";
     }
 }
