@@ -10,15 +10,13 @@ import java.io.Serializable;
  *
  * @author yuyahong
  * @date 2020/4/21 0021 17:50
- */  
+ */
 @TableName(value = "kaoyan_student")
 public class KaoyanStudent extends BaseStudent implements Serializable {
-    /**
-     * 所在班级
-     */
-    @TableField(value = "clazz_name")
-    private String clazzName;
 
+    //刚才的问题
+    //父类BaseStudent中的交class_name没问题
+    //子类KaoyanStudent变了
     /**
      * 考研学校
      */
@@ -31,23 +29,6 @@ public class KaoyanStudent extends BaseStudent implements Serializable {
     @TableField(value = "school_address")
     private String schoolAddress;
 
-    /**
-     * 获取所在班级
-     *
-     * @return clazz_name - 所在班级
-     */
-    public String getClazzName() {
-        return clazzName;
-    }
-
-    /**
-     * 设置所在班级
-     *
-     * @param clazzName 所在班级
-     */
-    public void setClazzName(String clazzName) {
-        this.clazzName = clazzName;
-    }
 
     /**
      * 获取考研学校

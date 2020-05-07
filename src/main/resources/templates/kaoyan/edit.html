@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/bootstrap.js"></script>
-    <title>就业学生</title>
+    <title>考研学生</title>
 </head>
 <body>
 <div class="PublicHead clearfix">
@@ -45,10 +45,10 @@
     <div class="leftBox">
         <ul>
             <a href="/user/work/page">
-                <li class="Select"><i class="iconfont icon-yonghuguanli"></i><span>就业学生</span></li>
+                <li><i class="iconfont icon-yonghuguanli"></i><span>就业学生</span></li>
             </a>
             <a href="/user/kaoyan/page">
-                <li><i class="iconfont icon-weibiaoti1"></i><span>考研学生</span></li>
+                <li class="Select"><i class="iconfont icon-weibiaoti1"></i><span>考研学生</span></li>
             </a>
 
             <a href="/user/army/page">
@@ -80,7 +80,7 @@
                     </div>
                     <hr>
                 </div>
-                <form action="/user/work/edit">
+                <form action="/user/kaoyan/edit">
                     <div class="ml-3">
                         <input type="hidden" th:value="*{student.getId()}" name="id">
                         <div class="form-group">
@@ -113,9 +113,9 @@
                             <input type="text" th:value="*{student.phone}" class="form-control" name="phone">
                         </div>
                         <div class="form-group">
-                            <label>公司名称</label>
-                            <input type="text" th:value="*{student.workCompany}" class="form-control"
-                                   name="workCompany">
+                            <label>考研学校</label>
+                            <input type="text" th:value="*{student.getKaoyanSchool()}" class="form-control"
+                                   name="kaoyanSchool">
                         </div>
                         <button type="submit" class="btn btn-primary">提交</button>
                     </div>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="/static/css/reset.css" rel="stylesheet"/>
+    <link href="/static/css/iconfont.css" rel="stylesheet"/>
+    <link href="/static/css/index.css" rel="stylesheet"/>
+    <script src="/static/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/js/f.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <title>公务员学生</title>
+</head>
+<body>
+<div class="PublicHead clearfix">
+    <div class="leftBox clearfix">
+        <div class="companyText">
+            高校毕业学生去向管理系统
+        </div>
+    </div>
+    <div class="RightBox clearfix">
+        <div class="UserPhotoBox">
+            <div class="UserPic">
+                <img src="images/user.jpg"/>
+            </div>
+            <div th:text="${session.user.getRealName()}" class="UserName">
+                管理员
+            </div>
+        </div>
+        <a href="/loginOut">
+            <div class="dropOutBox">
+                <i class="iconfont icon-app_icons--">
+                </i>
+                <span>退出</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="PublicDownWhole clearfix">
+    <!--左侧-->
+    <div class="leftBox">
+        <ul>
+            <a href="/user/work/page">
+                <li><i class="iconfont icon-yonghuguanli"></i><span>就业学生</span></li>
+            </a>
+            <a href="/user/kaoyan/page">
+                <li><i class="iconfont icon-weibiaoti1"></i><span>考研学生</span></li>
+            </a>
+
+            <a href="/user/army/page">
+                <li><i class="iconfont icon-tubiao_dingdan"></i><span>参军学生</span></li>
+            </a>
+            <a href="/user/country/page">
+                <li class="Select"><i class="iconfont icon-fenlei"></i><span>考公务员学生</span></li>
+            </a>
+            <a href="/user/chuangye/page">
+                <li><i class="iconfont icon-weibiaoti1"></i><span>创业学生</span></li>
+            </a>
+            <a href="/user/other/page">
+                <li><i class="iconfont icon-weibiaoti1"></i><span>其他学生</span></li>
+            </a>
+        </ul>
+    </div>
+    <!--右侧-->
+    <div class="RightBox">
+        <div class="PublicContentBox">
+            <!--公用指向页面名字-->
+            <div class="PublicPointToAgeText">
+                <span class="span1">公务员学生管理  </span> <span class="span2"></span>
+            </div>
+            <!--查询-->
+            <div class="InquireBox clearfix">
+
+                <div class="PublicBtnIcon Color1Btn fr">
+                    <a th:href="@{/user/country/export}">导出公务员学生</a>
+                </div>
+                <div class="PublicBtnIcon Color1Btn fr">
+                    <a data-toggle="modal" data-target="#import">导入公务员学生</a>
+                </div>
+
+                <form action="/user/country/page">
+                    <div class="InquireleftBox">
+                        <div class="Text">学号：</div>
+                        <div class="InputDiv"><input class="phoneInput" name="no" placeholder="请输入就业学生学号"/></div>
+                    </div>
+
+
+                    <div class="InquireleftBox">
+                        <div class="Text">姓名：</div>
+                        <div class="InputDiv"><input class="phoneInput" name="name" placeholder="请输入姓名"/></div>
+                    </div>
+
+
+                    <div class="InquireleftBox">
+                        <div class="Text">专业：</div>
+                        <div class="InputDiv"><input class="phoneInput" name="majorName" placeholder="请输入专业"/></div>
+                    </div>
+
+
+                    <div class="InquireleftBox">
+                        <div class="Text">班级：</div>
+                        <div class="InputDiv"><input class="phoneInput" name="className" placeholder="请输入班级"/></div>
+                    </div>
+
+
+                    <div class="PublicBtnIcon Color1Btn fr">
+                        <i class="iconfont icon-icon-chaxun"></i>
+                        <input type="submit" value="查询">
+                    </div>
+                </form>
+
+            </div>
+            <!--表修改-->
+            <div class="InquireTableBox">
+                <div class="headbox">
+                    <div class="headboxtext">
+                        <span class="span1">公务员学生列表</span>
+                    </div>
+                    <div class="PublicBtnIcon Color2Btn fr Js_edit">
+                        <i class="iconfont icon-changyongtubiao-mianxing-"></i>
+                        <span>添加</span>
+                    </div>
+                </div>
+
+                <!--查询到的表格-->
+                <div class="InquireSelectTable">
+                    <table class="PublicTableCss">
+                        <thead>
+                        <tr>
+                            <td>学号</td>
+                            <td>姓名</td>
+                            <td>性别</td>
+                            <td>学院名称</td>
+                            <td>专业名称</td>
+                            <td>班级名称</td>
+                            <td>个人电话</td>
+                            <td>公务员工作地址</td>
+                            <td>公务员岗位</td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="student:${iPage.getRecords()}">
+                            <td th:text="${student.getNo()}"></td>
+                            <td th:text="${student.getName()}"></td>
+                            <td th:text="${student.getSex()}"></td>
+                            <td th:text="${student.getCollegeName()}"></td>
+                            <td th:text="${student.getMajorName()}"></td>
+                            <td th:text="${student.getClassName()}"></td>
+                            <td th:text="${student.getPhone()}"></td>
+                            <td th:text="${student.workAddress}"></td>
+                            <td th:text="${student.workPost}"></td>
+                            <td>
+                                <a class="btn btn-primary" th:href="@{/user/country/toEdit(id=${student.id})}">编辑</a>
+                                <a class="btn btn-danger" th:href="@{/user/country/delete(id=${student.id})}"
+                                   onClick="return confirm('确定要删除吗？');">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!--分页-->
+                <div class="PageNumber">
+                    <div class="NumbersBox">
+                        <div class="LeftArrow">
+                            共[[${iPage.total}]]条记录
+                        </div>
+                        <div class="LeftArrow">
+                            每页[[${iPage.size}]]条
+                        </div>
+                        <div class="LeftArrow">
+                            共[[${iPage.pages}]]页
+                        </div>
+                        <div class="LeftArrow">
+                            <a th:href="@{/user/country/page(current=${(iPage.getCurrent()-1)<=0?1:iPage.getCurrent()-1})}">上一页</a>
+                        </div>
+                        <ul>
+                            <li class="Select" th:text="${iPage.getCurrent()}">第[[]]页</li>
+                        </ul>
+                        <div class="RightArrow ">
+                            <a th:href="@{/user/country/page(current=${(iPage.getCurrent()+1)>=iPage.getPages()?iPage.getPages():iPage.getCurrent()+1})}">下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="import" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">从excel表格导入参军学生</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="importStu" action="/user/country/import" method="post" enctype="multipart/form-data">
+                    <p>要求excel的格式和下面显示一样</p>
+                    <div class="form-group">
+                        <label for="file">导入excel文档</label>
+                        <input type="file" class="form-control-file" id="file" name="file">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" onclick="importStudent()" class="btn btn-primary">确认导入</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="PublicFloatBox adduser">
+    <div class="kongfx">
+        <div class=" wid400">
+            <div class="f_Head">
+                <span>添加参军学生信息</span>
+                <i class="Js_closeBtn iconfont icon-buoumaotubiao20 fr"></i>
+            </div>
+            <form action="/user/country/add">
+                <div class="f_content">
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            学号:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="no"/>
+                        </div>
+                    </div>
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            姓名:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="uploadimg" name="name"/>
+                        </div>
+
+                    </div>
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            性别:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="sex"/>
+                        </div>
+
+                    </div>
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            学院:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="collegeName"/>
+                        </div>
+
+                    </div>
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            专业:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="majorName"/>
+                        </div>
+
+                    </div>
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            班级:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="className"/>
+                        </div>
+
+                    </div>
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            个人电话:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="phone"/>
+                        </div>
+
+                    </div>
+
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            工作地址:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="workAddress"/>
+                        </div>
+                    </div>
+
+                    <div class="f_alonediv">
+                        <div class="f_alone_name">
+                            工作岗位:
+                        </div>
+                        <div class="f_alone_input">
+                            <input class="f_p_input" name="workPost"/>
+                        </div>
+                    </div>
+                    <div class="f_alonediv1">
+                        <div class="f_alone_name">
+                        </div>
+                        <div class="f_alone_input1">
+                            <!--publicbtn-->
+                            <div class="publicf_btn">
+                                <button type="submit" class="publicf_btn1">
+                                    确定
+                                </button>
+                                <div class="publicf_btn2 fr Js_closeBtn">
+                                    取消
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    function importStudent() {
+        let fileName = $("#file").val();
+        let sp = fileName.split('.');
+        let str = sp[1];
+        if (str === "xlsx" || str === "xls") {
+            $("#importStu").submit();
+        } else {
+            alert("上传正确文件！");
+        }
+    }
+</script>
+</html>

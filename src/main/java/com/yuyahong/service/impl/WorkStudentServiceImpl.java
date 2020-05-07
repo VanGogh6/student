@@ -32,9 +32,15 @@ import java.util.List;
  */
 @Service
 public class WorkStudentServiceImpl extends ServiceImpl<WorkStudentMapper, WorkStudent> implements WorkStudentService {
+
     @Autowired
     private BaseMapper<WorkStudent> baseMapper;
 
+    /**
+     * @param page
+     * @param workStudent
+     * @return
+     */
     @Override
     public IPage<WorkStudent> getWorkStudentPage(Page<WorkStudent> page, WorkStudent workStudent) {
         LambdaQueryWrapper<WorkStudent> queryWrapper = new LambdaQueryWrapper<>();

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/bootstrap.js"></script>
-    <title>就业学生</title>
+    <title>创业学生</title>
 </head>
 <body>
 <div class="PublicHead clearfix">
@@ -45,7 +45,7 @@
     <div class="leftBox">
         <ul>
             <a href="/user/work/page">
-                <li class="Select"><i class="iconfont icon-yonghuguanli"></i><span>就业学生</span></li>
+                <li><i class="iconfont icon-yonghuguanli"></i><span>就业学生</span></li>
             </a>
             <a href="/user/kaoyan/page">
                 <li><i class="iconfont icon-weibiaoti1"></i><span>考研学生</span></li>
@@ -58,7 +58,7 @@
                 <li><i class="iconfont icon-fenlei"></i><span>考公务员学生</span></li>
             </a>
             <a href="/user/chuangye/page">
-                <li><i class="iconfont icon-weibiaoti1"></i><span>创业学生</span></li>
+                <li class="Select"><i class="iconfont icon-weibiaoti1"></i><span>创业学生</span></li>
             </a>
             <a href="/user/other/page">
                 <li><i class="iconfont icon-weibiaoti1"></i><span>其他学生</span></li>
@@ -70,7 +70,7 @@
         <div class="PublicContentBox">
             <!--公用指向页面名字-->
             <div class="PublicPointToAgeText">
-                <span class="span1">就业学生管理  </span> <span class="span2"></span>
+                <span class="span1">公务员学生管理  </span> <span class="span2"></span>
             </div>
             <!--表修改-->
             <div class="InquireTableBox">
@@ -80,7 +80,7 @@
                     </div>
                     <hr>
                 </div>
-                <form action="/user/work/edit">
+                <form action="/user/chuangye/edit">
                     <div class="ml-3">
                         <input type="hidden" th:value="*{student.getId()}" name="id">
                         <div class="form-group">
@@ -113,8 +113,13 @@
                             <input type="text" th:value="*{student.phone}" class="form-control" name="phone">
                         </div>
                         <div class="form-group">
+                            <label>创业地址</label>
+                            <input type="text" th:value="*{student.getEntrepreneurshipeAddress()}" class="form-control"
+                                   name="workCompany">
+                        </div>
+                        <div class="form-group">
                             <label>公司名称</label>
-                            <input type="text" th:value="*{student.workCompany}" class="form-control"
+                            <input type="text" th:value="*{student.getEntrepreneurshipeCompany()}" class="form-control"
                                    name="workCompany">
                         </div>
                         <button type="submit" class="btn btn-primary">提交</button>

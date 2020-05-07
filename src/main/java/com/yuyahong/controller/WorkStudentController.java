@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -86,7 +87,6 @@ public class WorkStudentController {
      */
     @RequestMapping("/add")
     public String add(WorkStudent workStudent) {
-        System.out.println(workStudent);
         workStudentService.save(workStudent);
         return "redirect:/user/work/page";
     }
@@ -97,15 +97,16 @@ public class WorkStudentController {
      * @param response
      * @return
      */
+    @ResponseBody
     @RequestMapping("/export")
-    public String export(HttpServletResponse response) {
+    public void export(HttpServletResponse response) {
         try {
             List<WorkStudent> lists = workStudentService.list();
             workStudentService.export(response, lists);
         } catch (Exception ignored) {
 
         }
-        return "redirect:/user/work/page";
+//        return "redirect:/user/work/page";
     }
 
     /**
